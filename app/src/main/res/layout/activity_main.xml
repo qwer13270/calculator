@@ -4,51 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-192dp">
+
+    <!-- TextView at the top -->
+
+    <!-- First EditText in the middle -->
+
+    <!-- Second EditText in the middle -->
+
+    <!-- Buttons at the bottom -->
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="154dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="32dp"
-        android:text="Button Demo"
-        android:textSize="40dp"
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="53dp"
+        android:text="Calculator"
+        android:textSize="40sp"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/myTextField"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumber1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNumber1"
+        android:layout_width="343dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="204dp"
+        android:hint="Enter first number"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/myTextField"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="29dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="Enter your name"
-        app:layout_constraintBottom_toTopOf="@+id/clickButton"
+        android:id="@+id/editTextNumber2"
+        android:layout_width="343dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:hint="Enter second number"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber1" />
 
     <Button
-        android:id="@+id/clickButton"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="312dp"
-        android:onClick="clickFunction"
-        android:text="click me"
+        android:id="@+id/buttonAdd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="+"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonSubtract"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSubtract"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSubtract"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        app:layout_constraintEnd_toStartOf="@+id/buttonMultiply"
+        app:layout_constraintStart_toEndOf="@+id/buttonAdd"
+        app:layout_constraintTop_toTopOf="@+id/buttonMultiply" />
+
+    <Button
+        android:id="@+id/buttonMultiply"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="192dp"
+        android:text="*"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDivide"
+        app:layout_constraintStart_toEndOf="@+id/buttonSubtract" />
+
+    <Button
+        android:id="@+id/buttonDivide"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="/"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonMultiply"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myTextField" />
+        app:layout_constraintStart_toEndOf="@+id/buttonMultiply" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
